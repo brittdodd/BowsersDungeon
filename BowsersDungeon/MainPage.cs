@@ -128,8 +128,8 @@ namespace BowsersDungeon
                             Console.WriteLine("Player Information");
                             Console.WriteLine(player);
                             Console.WriteLine("Monsters Defeated: " + score);
-                            
                             break;
+                            Console.Clear();
                         case "d":
                         case "monster info":                            
                             Console.WriteLine("Monster Information\n\n");
