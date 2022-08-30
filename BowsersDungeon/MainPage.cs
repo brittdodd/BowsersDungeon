@@ -73,7 +73,7 @@ namespace BowsersDungeon
             Random rand = new Random();
             bool exit = true;
             bool bigLoop = true;
-            bool smallLoop = true;
+            bool smallLoop = false;
 
            do
             {
@@ -98,7 +98,7 @@ namespace BowsersDungeon
                         case "attack":
                             int randattk = rand.Next(1, 10);
                             Combat.DoBattle(player, monster);
-                            if (randattk <= 0)
+                            if (monster.Life <= 0)
                             {
                                 score++;
                                 Console.WriteLine($"You attacked and killed {monster.Name}!\n\n");
@@ -106,13 +106,12 @@ namespace BowsersDungeon
                                 reload = true;
 
                             }
-                            else
+                            if (player.Life <= 0)
                             {
-                                Console.WriteLine("You should try harder next time, you're now injured. Find a powerup to continue!\n\n");
-                                smallLoop = false;
+                                Console.WriteLine("You have been injured you need a power up!");
+                                smallLoop = true;
                             }
                             break;
-
                             Console.Clear();
                         case "b":
                         case "run away":
@@ -179,8 +178,7 @@ namespace BowsersDungeon
             string room = rooms[nbr];
             return room;
 
-            Console.Clear();
-
+            
         }//end Main()
     }//end class
 }//end namespace

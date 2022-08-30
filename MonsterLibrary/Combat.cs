@@ -18,14 +18,9 @@ namespace MonsterLibrary
 
             if (diceRoll <= (attacker.CalcHitChance() - defender.CalcBlock()))
             {
-               
-                int damageDealt = attacker.CalcDamage();
-                if (attacker.GetType().Equals(typeof(Bowser)))
-                {
-                    Console.WriteLine($"{attacker.Name} steals your life!");
-                    attacker.Life += damageDealt / 2;
-                }
 
+                int damageDealt = attacker.CalcDamage();
+                
                 defender.Life -= damageDealt;
 
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
