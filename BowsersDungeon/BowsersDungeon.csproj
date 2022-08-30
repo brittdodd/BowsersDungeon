@@ -16,4 +16,10 @@
     <ProjectReference Include="..\MonsterLibrary\MonsterLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Music.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
